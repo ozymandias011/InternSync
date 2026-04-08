@@ -1,0 +1,1 @@
+topics = get_top_industry_topics(subject)

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        function toggleFilters() {
+            var filterBox = document.getElementById("filters");
+            filterBox.style.display = (filterBox.style.display === "block") ? "none" : "block";
+        }
+    </script>
+    <style>
+        .search-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .search-form {
+            display: inline-block;
+            position: relative;
+        }
+
+        .filters {
+            display: none;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            position: absolute;
+            width: 100%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .search-form input,
+        .search-form select,
+        .search-form button {
+            margin: 5px 0;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-form button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        .search-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Intern<span>Sync</span></div>
+        <nav class="main-nav">
+            <a href="#">Home</a>
+            <a href="#">Internship</a>
+            <a href="#">Browse</a>
+        </nav>
+        <div class="auth-buttons">
+            <button class="login">Login</button>
+            <button class="signup">Signup</button>
+        </div>
+    </header>
+
+    <!-- Search Box -->
+    <div class="search-container">
+        <form action="/search" method="POST" class="search-form">
+            <input type="text" name="query" placeholder="Search for internships..." required>
+            <button type="button" onclick="toggleFilters()">Filters ▼</button>
+            <div id="filters" class="filters">
+                <input type="text" name="company" placeholder="Company Name (Optional)">
+                <input type="text" name="location" placeholder="Location (Optional)">
+                <input type="text" name="job_title" placeholder="Job Title (Optional)">
+            </div>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <section class="internships">
+        <h2>Available <span>Internships</span></h2>
+        <div class="cards-container">
+            {% for job in jobs %}
+            <a href="{{ job.link }}" class="card">
+                <div>
+                    <h1 class="company-name">{{ job.role }}</h1>
+                    <p class="location">{{ job.company }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="useful-links">
+            <h3>Useful Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">RoadMap</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <div class="newsletter">
+            <h3>Newsletter</h3>
+            <input type="email" placeholder="Your Email Address">
+            <button>Subscribe Now</button>
+        </div>
+
+        <div class="contact">
+            <h3>Contact</h3>
+            <p>Email: 1by23cb021@bmsit.in<br>Phone: +91 7226991114</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
