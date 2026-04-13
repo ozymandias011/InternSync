@@ -60,10 +60,8 @@ Anveshanna_final/
 ├── Databases/               # Additional database files
 ├── Front_new/               # Frontend (new UI)
 │
-├── .env.example             # Environment variables sample
-├── .gitignore
-├── README.md
-└── README.md
+├── .env                     # Environment variables 
+
 ```
 
 
