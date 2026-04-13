@@ -49,14 +49,21 @@ It automates internship search using web scraping and enhances listings by extra
 ## 🏗️ Project Structure  
 
 ```
-InternSync/
-├── app.py / main.py        # Flask app entry point
-├── templates/              # HTML pages
-├── static/                 # CSS & assets
-├── database/               # SQLite DB
-├── scraper/                # Selenium scripts
-├── utils/                  # Helper functions
-└── routes/                 # API routes
+Anveshanna_final/
+├── BACKEND/
+│   ├── static/              # CSS & assets
+│   ├── templates/           # HTML pages
+│   ├── Webscrap.py          # Selenium scraping script
+│   ├── app.py               # Flask backend
+│   └── jobs_data.db         # SQLite database
+│
+├── Databases/               # Additional database files
+├── Front_new/               # Frontend (new UI)
+│
+├── .env.example             # Environment variables sample
+├── .gitignore
+├── README.md
+└── README.md
 ```
 
 
