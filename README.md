@@ -51,17 +51,24 @@ It automates internship search using web scraping and enhances listings by extra
 ```
 Anveshanna_final/
 ├── BACKEND/
-│   ├── static/              # CSS & assets
-│   ├── templates/           # HTML pages
-│   ├── Webscrap.py          # Selenium scraping script
-│   ├── app.py               # Flask backend
-│   └── jobs_data.db         # SQLite database
+│   ├── static/              
+│   ├── templates/           
+│   ├── Webscrap.py          
+│   ├── app.py               
+│   └── jobs_data.db         
 │
-├── Databases/               # Additional database files
-├── Front_new/               # Frontend (new UI)
+├── Databases/               
 │
-├── .env                     # Environment variables 
-
+├── Front_new/
+│   ├── static/
+│   ├── templates/
+│   ├── Chat_bot.py
+│   ├── Main.py
+│   ├── WebScraper.py
+│   ├── cleardb.py
+│   ├── projects.py
+│   ├── resources.py
+│   └── tempCodeRunnerFile.py
 ```
 
 
