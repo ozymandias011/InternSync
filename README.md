@@ -1,47 +1,121 @@
-# InternSync
+# 🚀 InternSync – Internship Discovery & Learning Platform  
 
-InternSync is a Flask-based internship resource and chatbot web application. It includes a front-end UI in `Front_new`, a backend scraper in `BACKEND`, and a SQLite database stored under `Databases`.
+## 📌 Overview  
+InternSync is a web-based internship discovery platform that helps students find internships and learn the required skills efficiently.  
 
-## Project structure
+It automates internship search using web scraping and enhances listings by extracting required skills and mapping them to learning resources.  
 
-- `Front_new/` - Main Flask application, routes, chat integration, and frontend templates.
-- `BACKEND/` - Backend support code and web scraping utilities.
-- `Databases/` - SQLite database files and initialization scripts.
+---
 
-## Environment setup
+## ✨ Features  
 
-1. Copy the example env file:
-   ```bash
-   cp .env.example .env
-   ```
-2. Populate the secrets in `.env`:
-   - `AZURE_OPENAI_API_KEY`
-   - `FLASK_SECRET_KEY`
-   - `YOUTUBE_API_KEY`
-   - `GROQ_API_KEY`
+### 🔍 Internship Search  
+- Search internships by role (e.g., Frontend Intern) or company name  
+- Dynamically fetch internship listings  
 
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-   If `requirements.txt` is not present, install Flask, requests, openai, and sqlite3 support manually.
+### 🤖 Web Scraping (LinkedIn)  
+- Built using Selenium  
+- Extracts job title, company name, and internship details  
 
-## Run the app
+### 🧠 Skill Extraction  
+- Processes job descriptions  
+- Identifies required skills for each internship  
 
-From the repository root:
+### 🎥 Learning Resource Integration  
+- Uses YouTube Data API  
+- Fetches relevant videos for each skill  
 
+### 📊 Internship Data Management  
+- Stores internship data in SQLite3  
+- Optimized queries for faster search  
+
+### 🔐 Authentication  
+- User Sign Up / Login system  
+- JWT-based authentication  
+
+---
+
+## 🛠️ Tech Stack  
+
+- **Frontend:** HTML, CSS  
+- **Backend:** Flask (Python)  
+- **Database:** SQLite3  
+- **Web Scraping:** Selenium  
+- **API:** YouTube Data API  
+- **Authentication:** JWT  
+
+---
+
+## 🏗️ Project Structure  
+InternSync/
+│── app.py / main.py # Flask app entry point
+│── templates/ # HTML pages
+│── static/ # CSS & assets
+│── database/ # SQLite DB
+│── scraper/ # Selenium scripts
+│── utils/ # Helper functions
+│── routes/ # API routes
+
+
+---
+
+
+## ⚙️ Setup & Installation  
+
+### 1️⃣ Clone the Repository  
 ```bash
-python Front_new/Main.py
+git clone https://github.com/ozymandias011/InternSync.git
+cd InternSync
+### 2️⃣ Create Virtual Environment  
+```bash
+python -m venv venv
 ```
 
-Or run the frontend Flask application if using a different entrypoint.
+---
 
-## Secrets and Git safety
+### 3️⃣ Activate Virtual Environment  
 
-- `.env` is excluded from Git using `.gitignore`.
-- `README.md` and `.env.example` are safe to keep in the repository.
+#### ▶️ Windows:
+```bash
+venv\Scripts\activate
+```
 
-## Notes
+#### 4️⃣ Mac/Linux:
+```bash
+source venv/bin/activate
+```
+### 5️⃣ Run the Application  
+```bash
+python app.py
+```
 
-- Do not commit actual API keys or secret values.
-- Keep `.env` local and never add it to source control.
+---
+
+### 6️⃣ Open in Browser  
+```
+http://127.0.0.1:5000
+```
+
+## 📌 How It Works  
+
+1. User searches for an internship  
+2. Selenium scraper fetches listings  
+3. System extracts skills from job descriptions  
+4. YouTube API fetches learning videos  
+5. Results display internship details, skills, and resources  
+
+---
+
+## 🎯 Use Case  
+- Students looking for internships  
+- Beginners who want guided skill learning  
+- One platform for internships + preparation  
+
+---
+
+## 🚀 Future Improvements  
+- Progress tracking dashboard  
+- Resume-based recommendations  
+- Advanced filtering system  
+- Admin panel  
+
